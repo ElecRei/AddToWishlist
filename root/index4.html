@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Add To Wishlist - DEMO</title>
+        <meta name="description" content="__">
+        
+        <!-- CSS -->
+        
+            <!-- Normalize -->
+            <link rel="stylesheet" type="text/css" href="node_modules/normalize.css/normalize.css" />
+        
+            <!-- Page Styling -->
+            <link rel="stylesheet" type="text/css" href="css/styling.css" />
+        
+        
+        <!-- JS + jQuery -->
+        
+            <!-- jQuery v.1.11.3 -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    </head>
+    
+    
+    <body>
+        
+        <script src="js/lib/fb_api.js"></script>
+        
+        <div id="site_wrapper">
+            
+            <!-- Product List -->
+        
+            <div class="content_lists" id="product_list">
+                
+                <a href="#" title="#" class="product" id="product_01" onclick="productClick(this)">
+                    <span class="product_title">Product #1</span>
+                    <span class="product_cost">75 CAD</span>
+                </a>
+                
+                <a href="#" title="#" class="product" id="product_02" onclick="productClick(this)">
+                    <span class="product_title">Product #2</span>
+                    <span class="product_cost">50 CAD</span>
+                </a>
+                
+                <a href="#" title="#" class="product" id="product_03" onclick="productClick(this)">
+                    <span class="product_title">Product #3</span>
+                    <span class="product_cost">20 CAD</span>
+                </a>
+                
+            </div>
+            
+            
+            <!-- Wish List -->
+            
+            <div class="content_lists" id="wish_list">
+                
+                <a href="#" title="#" class="product" id="wishlist_01">
+                    <span class="product_title">Product #1</span>
+                    <span class="product_cost">75 CAD</span>
+                    <span class="product_social">
+                        <div
+                          class="fb-like"
+                          data-share="true"
+                          data-width="450"
+                          data-show-faces="true">
+                        </div>
+                    </span>
+                </a>
+                
+                <a href="#" title="#" class="product" id="wishlist_02">
+                    <span class="product_title">Product #2</span>
+                    <span class="product_cost">50 CAD</span>
+                    <span class="product_social">
+                        <div
+                          class="fb-like"
+                          data-share="true"
+                          data-width="450"
+                          data-show-faces="true">
+                        </div>
+                    </span>
+                </a>
+                
+                <a href="#" title="#" class="product" id="wishlist_03">
+                    <span class="product_title">Product #3</span>
+                    <span class="product_cost">20 CAD</span>
+                    <span class="product_social">
+                        <div
+                          class="fb-like"
+                          data-share="true"
+                          data-width="450"
+                          data-show-faces="true">
+                        </div>
+                    </span>
+                </a>
+                
+            </div>
+            
+        </div>
+        
+        <script src="js/lib/addProducts2.js"></script>
+    
+    </body>
+
+
+
+</html>

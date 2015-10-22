@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Add To Wishlist - DEMO</title>
+        <meta name="description" content="__">
+        
+        <!-- CSS -->
+        
+            <!-- Normalize -->
+            <link rel="stylesheet" type="text/css" href="node_modules/normalize.css/normalize.css" />
+        
+            <!-- Page Styling -->
+            <link rel="stylesheet" type="text/css" href="css/styling.css" />
+    
+    </head>
+    
+    
+    <body>
+        
+        <div id="site_wrapper">
+            
+            <!-- Product List -->
+        
+            <div class="content_lists" id="product_list">
+                
+                <a href="#" title="#" class="product" id="product_01" onclick="showProduct1()">
+                    <span class="product_title">Product #1</span>
+                    <span class="product_cost">75 CAD</span>
+                </a>
+                
+                <a href="#" title="#" class="product" id="product_02" onclick="showProduct2()">
+                    <span class="product_title">Product #2</span>
+                    <span class="product_cost">50 CAD</span>
+                </a>
+                
+                <a href="#" title="#" class="product" id="product_03" onclick="showProduct3()">
+                    <span class="product_title">Product #3</span>
+                    <span class="product_cost">20 CAD</span>
+                </a>
+                
+            </div>
+            
+            
+            <!-- Wish List -->
+            
+            <div class="content_lists" id="wish_list">
+                
+                <a href="#" title="#" class="product" id="wishlist_01" onclick="removeProduct1()">
+                    <span class="product_title">Product #1</span>
+                    <span class="product_cost">75 CAD</span>
+                </a>
+                
+                <a href="#" title="#" class="product" id="wishlist_02" onclick="removeProduct2()">
+                    <span class="product_title">Product #2</span>
+                    <span class="product_cost">50 CAD</span>
+                </a>
+                
+                <a href="#" title="#" class="product" id="wishlist_03" onclick="removeProduct3()">
+                    <span class="product_title">Product #3</span>
+                    <span class="product_cost">20 CAD</span>
+                </a>
+                
+            </div>
+            
+        </div>
+        
+        <script src="js/lib/addProducts.js"></script>
+    
+    </body>
+
+
+
+</html>
