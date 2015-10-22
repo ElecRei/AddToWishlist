@@ -115,10 +115,10 @@
                         float: left;
                     }
 
-                    #wish_list_info .product_title,
-                    #wish_list_info .product_image,
-                    #wish_list_info .product_cost,
-                    #wish_list_info .product_social {
+                    #wish_list .product_title,
+                    #wish_list .product_image,
+                    #wish_list .product_cost,
+                    #wish_list .product_social {
                         display: block;   
                     }
 

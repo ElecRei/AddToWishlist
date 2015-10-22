@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Add To Wishlist - DEMO</title>
+        <meta name="description" content="__">
+        
+        <!-- CSS -->
+        
+            <!-- Normalize -->
+            <link rel="stylesheet" type="text/css" href="node_modules/normalize.css/normalize.css" />
+        
+            <!-- Page Styling -->
+            <link rel="stylesheet" type="text/css" href="css/styling.css" />
+    
+    </head>
+    
+    
+    <body>
+        
+        <div id="site_wrapper">
+            
+            <!-- Product List -->
+        
+            <div class="content_lists" id="product_list">
+                
+                <a href="#" title="#" class="product" id="product_01" onclick="showProduct()">
+                    <span class="product_title">Product #1</span>
+                    <span class="product_cost">75 CAD</span>
+                </a>
+                
+                <a href="#" title="#" class="product" id="product_02">
+                    <span class="product_title">Product #2</span>
+                    <span class="product_cost">50 CAD</span>
+                </a>
+                
+                <a href="#" title="#" class="product" id="product_03">
+                    <span class="product_title">Product #3</span>
+                    <span class="product_cost">20 CAD</span>
+                </a>
+                
+            </div>
+            
+            
+            <!-- Wish List -->
+            
+            <div class="content_lists" id="wish_list">
+                
+                <a href="#" title="#" class="product" id="wishlist_01" onclick="removeProduct()">
+                    <span class="product_title">Product #1</span>
+                    <span class="product_cost">75 CAD</span>
+                </a>
+                
+                <a href="#" title="#" class="product" id="wishlist_02">
+                    <span class="product_title">Product #2</span>
+                    <span class="product_cost">50 CAD</span>
+                </a>
+                
+                <a href="#" title="#" class="product" id="wishlist_03">
+                    <span class="product_title">Product #3</span>
+                    <span class="product_cost">20 CAD</span>
+                </a>
+                
+            </div>
+            
+        </div>
+        
+        <script>
+            
+            // Add and Remove Function
+            
+            /*
+            var selectedProduct = document.getElementById('product_01');
+                
+            var addedProduct = document.getElementById('wishlist_01');
+        
+            function showProduct() {
+                
+                if(selectedProduct.onclick){
+                    addedProduct.style.display = 'block';
+                    //console.log('It worked!');   
+                }
+                
+                else{
+                    console.log('Nothing happened');   
+                }
+            }
+            
+            function removeProduct() {
+
+                if(addedProduct.style.display = 'block'){  
+                    addedProduct.style.display = 'none';
+                }
+
+            }
+            
+            */
+            
+            var selectedProduct01 = document.getElementById('product_01');
+            var addedProduct01 = document.getElementById('wishlist_01');
+            var selectedProduct02 = document.getElementById('product_02');
+            var addedProduct02 = document.getElementById('wishlist_02');
+            var selectedProduct03 = document.getElementById('product_03');
+            var addedProduct03 = document.getElementById('wishlist_03');
+            
+            var items = [selectedProduct01, addedProduct01,
+                         selectedProduct02, addedProduct02,
+                         selectedProduct03, addedProduct03]
+            
+            
+            
+            
+        </script>
+    
+    </body>
+
+
+
+</html>

@@ -25,26 +25,25 @@
     
     <body>
         
-        <div id="fb-root"></div>
         <script src="js/lib/fb_api.js"></script>
         
         <div id="site_wrapper">
+            
             <!-- Product List -->
         
             <div class="content_lists" id="product_list">
                 
-                <a href="#" title="#" class="product" id="product_01" onclick="showProduct1()">
+                <a href="#" title="#" class="product" id="product_01" onclick="productClick(this)">
                     <span class="product_title">Product #1</span>
-                    <img src="imgs/product_images/product_list/product_01_2x.jpg" class="product_image" />
                     <span class="product_cost">75 CAD</span>
                 </a>
                 
-                <a href="#" title="#" class="product" id="product_02" onclick="showProduct2()">
+                <a href="#" title="#" class="product" id="product_02" onclick="productClick(this)">
                     <span class="product_title">Product #2</span>
                     <span class="product_cost">50 CAD</span>
                 </a>
                 
-                <a href="#" title="#" class="product" id="product_03" onclick="showProduct3()">
+                <a href="#" title="#" class="product" id="product_03" onclick="productClick(this)">
                     <span class="product_title">Product #3</span>
                     <span class="product_cost">20 CAD</span>
                 </a>
@@ -57,18 +56,19 @@
             <div class="content_lists" id="wish_list">
                 
                 <a href="#" title="#" class="product" id="wishlist_01">
-                    <img src="imgs/product_images/product_list/product_01_2x.jpg" class="product_image" />
-                    <div class="wish_list_info">
-                        <span class="product_title">Product #1</span>
-                        <span class="product_cost">75 CAD</span>
-                        <span class="product_social">
-                            <div class="fb-share-button" data-href="http://medianet.com/preview_links/Ryan_Testing/Facebook_Share/index.html" data-layout="button"></div>
-                        </span>
-                        <button onclick="removeProduct1()">Remove</button>
-                    </div>
+                    <span class="product_title">Product #1</span>
+                    <span class="product_cost">75 CAD</span>
+                    <span class="product_social">
+                        <div
+                          class="fb-like"
+                          data-share="true"
+                          data-width="450"
+                          data-show-faces="true">
+                        </div>
+                    </span>
                 </a>
                 
-                <a href="#" title="#" class="product" id="wishlist_02" onclick="removeProduct2()">
+                <a href="#" title="#" class="product" id="wishlist_02">
                     <span class="product_title">Product #2</span>
                     <span class="product_cost">50 CAD</span>
                     <span class="product_social">
@@ -81,7 +81,7 @@
                     </span>
                 </a>
                 
-                <a href="#" title="#" class="product" id="wishlist_03" onclick="removeProduct3()">
+                <a href="#" title="#" class="product" id="wishlist_03">
                     <span class="product_title">Product #3</span>
                     <span class="product_cost">20 CAD</span>
                     <span class="product_social">
@@ -98,7 +98,7 @@
             
         </div>
         
-        <script src="js/lib/addProducts.js"></script>
+        <script src="js/lib/addProducts2.js"></script>
     
     </body>
 
