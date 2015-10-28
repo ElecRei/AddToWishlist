@@ -15,6 +15,23 @@
             <link rel="stylesheet" type="text/css" href="css/styling.css" />
         
         
+            <style>
+                
+                #product_catalogue {
+                    width: 1080px;
+                }
+                
+                .product_item {
+                    border: 1px solid #000 inset;
+                    
+                    width: 25%;
+                    height: 250px;
+                    float: left;
+                }
+        
+            </style>
+        
+        
         <!-- JS + jQuery -->
         
             <!-- jQuery v.1.11.3 -->
@@ -38,12 +55,15 @@
             
             <!-- 7 Divs -->
             
+            <div id="demo"></div>
+            
         </div>
         
         
         
         <script src="js/lib/productOutput.js"></script>
         
+        <script src="js/lib/productList.js"></script>
         
         <script>
         
@@ -52,7 +72,43 @@
         
         </script>
         
+        <script>
             
+            document.getElementById("demo").innerHTML =
+            prd01.prdName + " " + prd01.prdCode;
+            
+        </script>
+        
+        <script>
+            
+            /*
+            
+            var counter;
+            
+            for (counter = 0; counter <= 17; counter++ ) {
+                document.write(counter + '<br />');
+            };
+            
+            */
+            
+            for (i = 0; i <= 17; i++) {
+                document.write(
+                    "<div class=\"product_item\">"
+                    + prdArray[i].prdName + 
+                    "<br />"
+                );
+                document.write(
+                    prdArray[i].prdPrice + 
+                    "<br />"
+                );
+                document.write(
+                    prdArray[i].prdCode + 
+                    "<br /></div>"
+                );
+                document.write("<br /><br />");
+            }
+        
+        </script>
         
     </body>
     
