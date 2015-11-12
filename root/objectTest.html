@@ -17,17 +17,115 @@
         
             <style>
                 
+                /* Raleway */
+                @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+                /* font-family: 'Raleway', sans-serif; */
+                
+                @keyframes alertBox {
+                 
+                    0% { top: -50px; }
+                    
+                    50% { top: 0px; }
+                    
+                    100% { top: -50px; }
+                    
+                }
+                
+                @keyframes pushDown {
+                 
+                    0% { margin-top: 0px; }
+                    
+                    50% { top: 50px; }
+                    
+                    100% { top: 0px; }
+                    
+                }
+                
+                * {
+                    z-index: 0;   
+                }
+                
+                body {
+                    font-family: 'Raleway', sans-serif;   
+                }
+                
+                .alert {
+                    background: #2ecc71;
+                    cursor: default;
+                    opacity: 0;
+                    
+                    width: 100vw;
+                    height: 50px;
+                    position: fixed;
+                        top: -50px;
+                        left: 0;
+                        right: 0;
+                    
+                    /*animation: alertBox 5s;*/
+                    z-index: 100;
+                }
+                
+                    .alert_text {
+                        color: #FFF;
+                        font-size: 1.2em;
+                        font-weight: 700;
+                        line-height: 50px;
+                        text-align: center;
+                        -webkit-user-select: none; /* Chrome/Safari */        
+                        -moz-user-select: none; /* Firefox */
+                        -ms-user-select: none; /* IE10+ */
+                        
+                        display: block;
+                        width: 100%;
+                        
+                    }
+                
                 #product_catalogue {
-                    width: 1080px;
+                    width: 100%;
+                        max-width: 1080px;
+                        min-width: 320px;
+                }
+                
+                #demo {
+                    width: auto;
+                    height: auto;
+                    
+                    animation: pushDown 5s;   
                 }
                 
                 .product_item {
-                    border: 1px solid #000 inset;
+                    border: 1px solid #bdc3c7;
+                    cursor: pointer;
                     
-                    width: 25%;
-                    height: 250px;
+                    width: 21%;
+                    height: 300px;
+                    margin: 0px 2% 48px 2%;
+                    position: relative;
                     float: left;
+                    
+                    transition: all .2s;
                 }
+                
+                    .product_item:hover {
+                        background: #ecf0f1;   
+                    }
+                
+                    .product_name {
+                        font-weight: 700;
+                        text-align: center;
+                        
+                        width: 100%;
+                        position: absolute;
+                            top: 12px;
+                    }
+                
+                    .product_price {
+                        text-align: center;
+                        
+                        width: 100%;
+                        position: absolute;
+                            bottom: 12px;
+                    }
         
             </style>
         
@@ -42,28 +140,122 @@
     
     <body>
         
+        <!--
+
+            Post-lunch figure out why pushDown animation is not working and make the product boxes look good.
+
+        -->
         
-        <div id="product_catalogue">
-            
-            <div class="product_item"></div>
-            <div class="product_item"></div>
-            <div class="product_item"></div>
-            <div class="product_item"></div>
-            <div class="product_item"></div>
-            <div class="product_item"></div>
-            <div class="product_item"></div>
-            
-            <!-- 7 Divs -->
-            
-            <div id="demo"></div>
-            
+        <div class="alert">
+            <span class="alert_text">Product Added to Wishlist!</span>
         </div>
         
+       
+        <div id="product_catalogue">
+            
+            <!--
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            -->
+            
+            <div id="demo" class="demoClass">
+                
+                <script src="js/lib/productOutput.js"></script>
         
-        
-        <script src="js/lib/productOutput.js"></script>
-        
-        <script src="js/lib/productList.js"></script>
+                <script src="js/lib/productList.js"></script>
+            
+                <script>
+            
+                    /*
+
+                    var counter;
+
+                    for (counter = 0; counter <= 17; counter++ ) {
+                        document.write(counter + '<br />');
+                    };
+
+                    */
+                    
+                    var productContainer = document.getElementById('demo');
+
+                    for (i = 0; i <= 17; i++) {
+                        if($( "#demo" ).hasClass( "demoClass" ))  {
+                            
+                            document.write(
+                                "<div class=\"product_item\">" +
+                                "<span class=\"product_name\">" + 
+                                prdArray[i].prdName + 
+                                "</span>" +
+                                "<br />"
+                            );
+                            document.write(
+                                "<span class=\"product_price\">" +
+                                prdArray[i].prdPrice + 
+                                "</span>" + 
+                                "<br /></div>"
+                            );
+                            //document.write("<br /><br />");
+                        }
+                        else {
+                            document.write(
+                                "<div class=\"product_item\">"
+                                + prdArray[i].prdName + 
+                                "<br />"
+                            );
+                            document.write(
+                                prdArray[i].prdPrice + 
+                                "<br />"
+                            );
+                            document.write(
+                                prdArray[i].prdCode + 
+                                "<br /></div>"
+                            );
+                            //document.write("<br /><br />");
+                            //console.log("ERROR, ERROR, ERROR!");   
+                        }
+                    }
+                    
+                    /*
+                    $('.product_item').click(function() {
+                        $('.alert').animate({
+                            top: "0px",
+                            opacity: "1"
+                        }, 1000, function() {
+                            $('.alert').animate({
+                                top: "-50px",
+                                opacity: "0"
+                            }, 900);
+                        });
+                    });
+                    */
+                    
+                    $('.product_item').click(function() {
+                        $('.alert').animate({
+                            top: "0px",
+                            opacity: "1"
+                        });
+                    });
+                    
+                    if($('.product_item').css("top")=='0px') {
+                        console.log("it works");
+                    });
+                    
+                    if($('.product_item').css("top")=='0px') {
+                        $('.product_item').delay(500).animate({
+                            top: "-50px"
+                        });
+                    };
+
+                </script>
+            
+            </div>
+            
+        </div>
         
         <script>
         
@@ -73,42 +265,13 @@
         </script>
         
         <script>
-            
+            /*
             document.getElementById("demo").innerHTML =
             prd01.prdName + " " + prd01.prdCode;
-            
-        </script>
-        
-        <script>
-            
-            /*
-            
-            var counter;
-            
-            for (counter = 0; counter <= 17; counter++ ) {
-                document.write(counter + '<br />');
-            };
-            
             */
-            
-            for (i = 0; i <= 17; i++) {
-                document.write(
-                    "<div class=\"product_item\">"
-                    + prdArray[i].prdName + 
-                    "<br />"
-                );
-                document.write(
-                    prdArray[i].prdPrice + 
-                    "<br />"
-                );
-                document.write(
-                    prdArray[i].prdCode + 
-                    "<br /></div>"
-                );
-                document.write("<br /><br />");
-            }
-        
         </script>
+        
+        
         
     </body>
     
