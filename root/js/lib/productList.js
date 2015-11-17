@@ -6,9 +6,21 @@ var currency = ["CAD"];
 //
 // Product Type Legend
 // 0 = Ring, 1 = Necklace, 2 = Bracelet, 3 = Charm
+//
+// Note : Make sure the image used matches the product type
 
 var productType = [ 'Ring', 'Necklace', 'Bracelet', 'Charm' ];
+// Add a default for products that don't have any type or a fallback
+// for errors.
 
+// Product Item Layout
+// 
+// var prd01 = { prdName:"Tropical Palm " + productType[0], <-- Name of Product plus product type
+//              prdImage: "IMAGE GOES HERE",                <-- Product image link
+//              prdPrice: "90 " + currency,                 <-- Product Price, don't change the currency
+//              prdCode: "190952CZ"                         <-- Product Code
+//             };
+//
 
 var prd01 = { prdName:"Tropical Palm " + productType[0], 
              prdImage: "IMAGE GOES HERE", 
@@ -118,6 +130,15 @@ var prd18 = { prdName:"Petit Facets Green " + productType[3],
              prdCode: "791499SGQ"
             };
 
+// Product List Array
+//
+// This is where all the products get placed for the
+// product list function to gather and output onto
+// the page.
+//
+// Note : When adding a new product make sure to update
+//        the array accordingly, no dynamic ways yet.
+//
 //               Product    Array #
 var prdArray = [ prd01,     // 0
                  prd02,     // 1
