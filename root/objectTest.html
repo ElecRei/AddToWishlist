@@ -7,14 +7,14 @@
         <meta name="description" content="__">
         
         <!-- CSS -->
-        
+            
             <!-- Normalize -->
             <link rel="stylesheet" type="text/css" href="node_modules/normalize.css/normalize.css" />
-        
+            
             <!-- Page Styling -->
             <link rel="stylesheet" type="text/css" href="css/styling.css" />
-        
-        
+            
+            
             <style>
                 
                 /* Raleway */
@@ -276,6 +276,7 @@
                             
                             document.write(
                                 "<div class=\"product_item\" id=\"" +
+                                "prod" +
                                 [i] +
                                 "\">" +
                                 "<span class=\"product_name\">" + 
@@ -375,12 +376,11 @@
                     var prodNum;
                     
                     $('.product_item').click(function() {
-                        if($(this).has('0')) {
+                        if($(this).attr('id') == 'prod0') {
                             prodNum = 0;
                             wishlist();
                         }
-                        else if($(this).has('1')) {
-                            console.log('prodNum');
+                        else if($(this).has('prod1')) {
                             prodNum = 1;
                             wishlist();
                         }
