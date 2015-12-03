@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Add To Wishlist - DEMO</title>
+        <meta name="description" content="__">
+        
+        <!-- CSS -->
+        
+            <!-- Normalize -->
+            <link rel="stylesheet" type="text/css" href="node_modules/normalize.css/normalize.css" />
+        
+            <!-- Page Styling -->
+            <link rel="stylesheet" type="text/css" href="css/styling.css" />
+        
+        
+            <style>
+                
+                /* Raleway */
+                @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+                /* font-family: 'Raleway', sans-serif; */
+                
+                @keyframes alertBox {
+                 
+                    0% { top: -50px; }
+                    
+                    50% { top: 0px; }
+                    
+                    100% { top: -50px; }
+                    
+                }
+                
+                @keyframes pushDown {
+                 
+                    0% { margin-top: 0px; }
+                    
+                    50% { top: 50px; }
+                    
+                    100% { top: 0px; }
+                    
+                }
+                
+                * {
+                    z-index: 0;   
+                }
+                
+                #left_box, #right_box {
+                    background: #DEDEDE;
+                    
+                    width: 200px;
+                    height: 200px;
+                    position: relative;
+                }
+                
+                    #left_box {
+                        float: left;   
+                    }
+
+                    #right_box {
+                        float: left;   
+                    }
+                
+                
+                    .red_box {
+                        background: red;
+                        
+                        width: 100px;
+                        height: 100px;
+                        position: absolute;
+                    }
+                
+                    
+                
+        
+            </style>
+        
+        
+        <!-- JS + jQuery -->
+        
+            <!-- jQuery v.1.11.3 -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    </head>
+    
+    
+    <body>
+        
+        <button id="boxMaker" onclick="boxMaker">Generate Box</button>
+        
+        
+        
+        <div id="left_box">
+        </div>
+        
+        <div id="right_box">
+        
+        </div>
+        
+        <script>
+            
+            var boxMaker = document.getElementById('boxMaker');
+            
+            var leftBox = document.getElementById('left_box');
+            
+            var rightBox = document.getElementById('right_box');
+            
+            function BoxGen() {
+                
+                $(boxMaker).click(function() {
+                    $('#left_box').html(
+                        "<div class=\"red_box\"></div>"
+                    );
+                });
+                
+            };
+            
+            function popUp() {
+                alert('Test');
+                document.write(
+                        "<div class=\"red_box\"></div>"
+                    );
+            }
+            
+        </script>
+        
+    </body>
+    
+</html>
