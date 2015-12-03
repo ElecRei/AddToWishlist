@@ -359,7 +359,10 @@
                 
                 <script>
                     
+                    var demoTwo = document.getElementById('demo2');
+                    
                     function wishlist() {
+                        /*
                         document.getElementById('demo2').innerHTML = (
                             "<div class=\"product_item\">" +
                             "<span class=\"product_name\">" + 
@@ -371,6 +374,20 @@
                             "</span>" + 
                             "<br /></div>"
                             );
+                        */
+                        document.open(
+                        document.write(
+                            "<div class=\"product_item\">" +
+                            "<span class=\"product_name\">" + 
+                            prdArray[prodNum].prdName + 
+                            "</span>" +
+                            "<br />" +
+                            "<span class=\"product_price\">" +
+                            prdArray[prodNum].prdPrice + 
+                            "</span>" + 
+                            "<br /></div>"
+                            );
+                            );
                     };
                     
                     var prodNum;
@@ -380,7 +397,7 @@
                             prodNum = 0;
                             wishlist();
                         }
-                        else if($(this).has('prod1')) {
+                        else if($(this).attr('id') == 'prod1') {
                             prodNum = 1;
                             wishlist();
                         }
