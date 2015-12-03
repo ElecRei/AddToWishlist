@@ -1,0 +1,75 @@
+<html>
+    
+    <head>
+    
+        <!-- jQuery v.1.11.3 -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    </head>
+    
+    
+    <body>
+        
+        <button class="move_btn" onclick="surviveSim()">Move Forward</button>
+        
+        <button class="eat_btn" onclick="surviveSim()">Eat Food</button>
+        
+        <button class="sprint_btn" onclick="surviveSim()">Sprint</button>
+        
+        <div id="score">0</div>
+        
+        <div id="stomach">100</div>
+        
+        <div id="brainPower">100</div>
+        
+        <div id="distanceTravelled">0 km</div>
+        
+        <script>
+
+        // Stats
+            
+        var stomach = 100;
+        
+        var brainPower = 100;
+            
+        var distanceTravelled = 0;
+            
+        var distanceBonus = 0;
+            
+        var score = 0;
+        
+        // Support
+            
+        var eatFood = 30;
+            
+        var sprint = 5;
+            
+        // Obstacles
+            
+        var hunger = 10;
+            
+        var brainDrain = hunger * 1.5;
+            
+        var moveSpace = 5;
+            
+        var sprintSpace = 10;
+            
+        var idle = 10;
+        
+            
+        function surviveSim() {
+            
+            if($('button').hasClass('move_btn')) {
+                console.log('sucess');   
+            }
+            else {
+                console.log('HEY');   
+            }
+            
+        }
+            
+        </script>
+            
+    </body>
+    
+</html>

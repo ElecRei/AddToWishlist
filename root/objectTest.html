@@ -177,7 +177,7 @@
                     }
                 
                         .product_item.hidden {
-                            display: none;   
+                            display: block;   
                         }
         
             </style>
@@ -361,7 +361,7 @@
                 
                 <div id="demo2">
                     
-                    <div class="product_item hidden" id="prod0"></div>
+                    <div class="product_item wishlist hidden" id="prod0"></div>
                     <div class="product_item hidden" id="prod1"></div>
                     <div class="product_item hidden" id="prod2"></div>
                     <div class="product_item hidden" id="prod3"></div>
@@ -383,6 +383,7 @@
                             "<br /></div>"
                             );
                         */
+                        console.log('innerHTML');
                         document.getElementById(prodItem).innerHTML = (
                             "<span class=\"product_name\">" + 
                             prdArray[prodNum].prdName + 
@@ -390,6 +391,7 @@
                             "<br />" +
                             "<span class=\"product_price\">" +
                             prdArray[prodNum].prdPrice + 
+                            console.log('HEY') +
                             "</span>" + 
                             "<br />"
                             );
@@ -400,8 +402,8 @@
                     var prodNum;
                     
                     $('.product_item').click(function() {
-                        if($(this).attr('id') == 'prod0') {
-                            prodItem = document.getElementById('prod0');
+                        if($(this).hasClass('wishtlist') && $(this).attr('id') == 'prod0') {
+                            prodItem = 'prod0';
                             prodNum = 0;
                             wishlist();
                         }
@@ -415,6 +417,7 @@
                         }
 
                     });
+                    
                 </script>
                     
                 </div>
