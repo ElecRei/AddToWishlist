@@ -10,11 +10,13 @@
     
     <body>
         
-        <button class="move_btn" onclick="surviveSim()">Move Forward</button>
+        <button class="move_btn">Move Forward</button>
         
-        <button class="eat_btn" onclick="surviveSim()">Eat Food</button>
+        <button class="eat_btn">Eat Food</button>
         
-        <button class="sprint_btn" onclick="surviveSim()">Sprint</button>
+        <button class="rest_btn">Rest</button>
+        
+        <button class="sprint_btn">Sprint</button>
         
         <div id="score">0</div>
         
@@ -42,6 +44,10 @@
             
         var eatFood = 30;
             
+        var smlRest = 5;
+            
+        var bigRest = 20;
+            
         var sprint = 5;
             
         // Obstacles
@@ -57,16 +63,34 @@
         var idle = 10;
         
             
-        function surviveSim() {
+        
             
-            if($('button').hasClass('move_btn')) {
-                console.log('sucess');   
-            }
-            else {
-                console.log('HEY');   
-            }
-            
-        }
+            $('button').click(function() {
+                
+                if($(this).hasClass('move_btn')) {
+                    stomach = stomach - hunger + moveSpace;
+                    brainPower = brainPower - brainDrain;
+                    distanceTravelled = distanceTravelled + 1;
+                    console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
+                    console.log('You have travelled ' + distanceTravelled + ' km.');
+                    document.getElementById('stomach').innerHTML = stomach;
+                    document.getElementById('brainPower').innerHTML = brainPower;
+                    document.getElementById('distanceTravelled').innerHTML = distanceTravelled + ' km';
+                    console.log("Success");   
+                }
+                else if($(this).hasClass('eat_btn')) {
+                    stomach = stomach + eatFood - idle;
+                    brainPower = brainPower + smlRest;
+                    console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
+                    document.getElementById('stomach').innerHTML = stomach;
+                    document.getElementById('brainPower').innerHTML = brainPower;
+                    console.log("Success");
+                }
+                else {
+                    console.log(":(");   
+                }
+                
+            });
             
         </script>
             
