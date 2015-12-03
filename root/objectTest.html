@@ -175,6 +175,10 @@
                     #product_wishlist {
                         background: skyblue;   
                     }
+                
+                        .product_item.hidden {
+                            display: none;   
+                        }
         
             </style>
         
@@ -356,6 +360,12 @@
                 <h2>Wishlist</h2>
                 
                 <div id="demo2">
+                    
+                    <div class="product_item hidden" id="prod0"></div>
+                    <div class="product_item hidden" id="prod1"></div>
+                    <div class="product_item hidden" id="prod2"></div>
+                    <div class="product_item hidden" id="prod3"></div>
+                    <div class="product_item hidden" id="prod4"></div>
                 
                 <script>
                     
@@ -373,8 +383,7 @@
                             "<br /></div>"
                             );
                         */
-                        document.getElementById('demo2').innerHTML = (
-                            "<div class=\"product_item\">" +
+                        document.getElementById(prodItem).innerHTML = (
                             "<span class=\"product_name\">" + 
                             prdArray[prodNum].prdName + 
                             "</span>" +
@@ -382,18 +391,22 @@
                             "<span class=\"product_price\">" +
                             prdArray[prodNum].prdPrice + 
                             "</span>" + 
-                            "<br /></div>"
+                            "<br />"
                             );
                     };
+                    
+                    var prodItem;
                     
                     var prodNum;
                     
                     $('.product_item').click(function() {
                         if($(this).attr('id') == 'prod0') {
+                            prodItem = document.getElementById('prod0');
                             prodNum = 0;
                             wishlist();
                         }
                         else if($(this).attr('id') == 'prod1') {
+                            prodItem = 1;
                             prodNum = 1;
                             wishlist();
                         }
