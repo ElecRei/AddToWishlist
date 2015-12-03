@@ -359,8 +359,6 @@
                 
                 <script>
                     
-                    var demoTwo = document.getElementById('demo2');
-                    
                     function wishlist() {
                         /*
                         document.getElementById('demo2').innerHTML = (
@@ -375,8 +373,7 @@
                             "<br /></div>"
                             );
                         */
-                        document.open(
-                        document.write(
+                        document.getElementById('demo2').innerHTML = (
                             "<div class=\"product_item\">" +
                             "<span class=\"product_name\">" + 
                             prdArray[prodNum].prdName + 
@@ -386,7 +383,6 @@
                             prdArray[prodNum].prdPrice + 
                             "</span>" + 
                             "<br /></div>"
-                            );
                             );
                     };
                     
