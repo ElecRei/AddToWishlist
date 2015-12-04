@@ -14,6 +14,8 @@
         
         <button class="eat_btn">Eat Food</button>
         
+        <button class="search_btn">Search for Food</button>
+        
         <button class="rest_btn">Rest</button>
         
         <button class="sprint_btn">Sprint</button>
@@ -23,6 +25,8 @@
         <div id="stomach">100</div>
         
         <div id="brainPower">100</div>
+        
+        <div id="food">4</div>
         
         <div id="distanceTravelled">0 km</div>
         
@@ -42,7 +46,9 @@
         
         // Support
             
-        var eatFood = 30;
+        var food = 4;
+            
+        var eatFood = 10;
             
         var smlRest = 5;
             
@@ -79,12 +85,27 @@
                     console.log("Success");   
                 }
                 else if($(this).hasClass('eat_btn')) {
-                    stomach = stomach + eatFood - idle;
+                    
+                    if (food > 0) {
+                    stomach = stomach + eatFood;
+                    brainPower = brainPower + smlRest;
+                    food = food - 1;
+                    console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
+                    document.getElementById('stomach').innerHTML = stomach;
+                    document.getElementById('brainPower').innerHTML = brainPower;
+                    document.getElementById('food').innerHTML = food;
+                    console.log("Success");
+                    }
+                    else if (food <=0) {
+                    stomach = stomach - idle;
                     brainPower = brainPower + smlRest;
                     console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
                     document.getElementById('stomach').innerHTML = stomach;
                     document.getElementById('brainPower').innerHTML = brainPower;
-                    console.log("Success");
+                    }
+                }
+                else if($(this).hasClass('search_btn')) {
+                    
                 }
                 else {
                     console.log(":(");   
