@@ -67,48 +67,108 @@
         var sprintSpace = 10;
             
         var idle = 10;
+            
+        var randomChanceFood;
+            
+            
+        function scoreCalc() {
+            
+            score = score + stomach + brainPower + distanceTravelled + food;
+            document.getElementById('score').innerHTML = score;
+            
+        };
         
+        function searchForFood() {
+            randomChanceFood = Math.floor((Math.random() * 10) + 1);
+            
+            if(randomChanceFood%2 == 0) {
+                food = food + 1;
+                console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
+                document.getElementById('stomach').innerHTML = stomach;
+                document.getElementById('brainPower').innerHTML = brainPower;
+                document.getElementById('food').innerHTML = food;
+            }
+            else {
+                stomach = stomach - idle;
+                brainPower = brainPower - brainDrain;
+                food = food;
+                console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
+                document.getElementById('stomach').innerHTML = stomach;
+                document.getElementById('brainPower').innerHTML = brainPower;
+                document.getElementById('food').innerHTML = food;
+            }
+            
+        };
             
         
             
             $('button').click(function() {
                 
-                if($(this).hasClass('move_btn')) {
-                    stomach = stomach - hunger + moveSpace;
-                    brainPower = brainPower - brainDrain;
-                    distanceTravelled = distanceTravelled + 1;
-                    console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
-                    console.log('You have travelled ' + distanceTravelled + ' km.');
-                    document.getElementById('stomach').innerHTML = stomach;
-                    document.getElementById('brainPower').innerHTML = brainPower;
-                    document.getElementById('distanceTravelled').innerHTML = distanceTravelled + ' km';
-                    console.log("Success");   
-                }
-                else if($(this).hasClass('eat_btn')) {
-                    
-                    if (food > 0) {
-                    stomach = stomach + eatFood;
-                    brainPower = brainPower + smlRest;
-                    food = food - 1;
-                    console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
-                    document.getElementById('stomach').innerHTML = stomach;
-                    document.getElementById('brainPower').innerHTML = brainPower;
-                    document.getElementById('food').innerHTML = food;
-                    console.log("Success");
+                if (hunger > 0 && brainPower > 0) {
+                
+                    if($(this).hasClass('move_btn')) {
+                        stomach = stomach - hunger + moveSpace;
+                        brainPower = brainPower - brainDrain;
+                        distanceTravelled = distanceTravelled + 1;
+                        console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
+                        console.log('You have travelled ' + distanceTravelled + ' km.');
+                        document.getElementById('stomach').innerHTML = stomach;
+                        document.getElementById('brainPower').innerHTML = brainPower;
+                        document.getElementById('distanceTravelled').innerHTML = distanceTravelled + ' km';
+                        console.log("Success");
+                        scoreCalc();
                     }
-                    else if (food <=0) {
-                    stomach = stomach - idle;
-                    brainPower = brainPower + smlRest;
-                    console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
-                    document.getElementById('stomach').innerHTML = stomach;
-                    document.getElementById('brainPower').innerHTML = brainPower;
+                    else if($(this).hasClass('eat_btn')) {
+
+                        if (food > 0) {
+                            stomach = stomach + eatFood;
+                            brainPower = brainPower + smlRest;
+                            food = food - 1;
+                            console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
+                            document.getElementById('stomach').innerHTML = stomach;
+                            document.getElementById('brainPower').innerHTML = brainPower;
+                            document.getElementById('food').innerHTML = food;
+                            console.log("Success");
+                            scoreCalc();
+                        }
+                        else if (food <=0) {
+                            stomach = stomach - idle;
+                            brainPower = brainPower + smlRest;
+                            console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
+                            document.getElementById('stomach').innerHTML = stomach;
+                            document.getElementById('brainPower').innerHTML = brainPower;
+                            scoreCalc();
+                        }
+                    }
+                    else if($(this).hasClass('search_btn')) {
+                        searchForFood();
+                        scoreCalc();
+                    }
+                    else if($(this).hasClass('rest_btn')) {
+                        stomach = stomach - hunger;
+                        brainPower = brainPower + bigRest;
+                        console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
+                        document.getElementById('stomach').innerHTML = stomach;
+                        document.getElementById('brainPower').innerHTML = brainPower;
+                        scoreCalc();
+                    }
+                    else if($(this).hasClass('sprint_btn')) {
+                        stomach = stomach - hunger - sprintSpace;
+                        brainPower = brainPower - brainDrain;
+                        distanceTravelled = distanceTravelled + sprint;
+                        console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
+                        document.getElementById('stomach').innerHTML = stomach;
+                        document.getElementById('brainPower').innerHTML = brainPower;
+                        document.getElementById('distanceTravelled').innerHTML = distanceTravelled + ' km';
+                        scoreCalc();
+                    }
+                    else {
+                        console.log(":(");   
                     }
                 }
-                else if($(this).hasClass('search_btn')) {
-                    
-                }
-                else {
-                    console.log(":(");   
+                
+                else if (hunger <= 0 || brainPower <= 0) {
+                    console.log(':(');
                 }
                 
             });
