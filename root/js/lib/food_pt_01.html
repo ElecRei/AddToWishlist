@@ -1,0 +1,180 @@
+<html>
+    
+    <head>
+    
+        <!-- jQuery v.1.11.3 -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    </head>
+    
+    
+    <body>
+        
+        <button class="move_btn">Move Forward</button>
+        
+        <button class="eat_btn">Eat Food</button>
+        
+        <button class="search_btn">Search for Food</button>
+        
+        <button class="rest_btn">Rest</button>
+        
+        <button class="sprint_btn">Sprint</button>
+        
+        <div id="score">0</div>
+        
+        <div id="stomach">100</div>
+        
+        <div id="brainPower">100</div>
+        
+        <div id="food">4</div>
+        
+        <div id="distanceTravelled">0 km</div>
+        
+        <script>
+
+        // Stats
+            
+        var stomach = 100;
+        
+        var brainPower = 100;
+            
+        var distanceTravelled = 0;
+            
+        var distanceBonus = 0;
+            
+        var score = 0;
+        
+        // Support
+            
+        var food = 4;
+            
+        var eatFood = 10;
+            
+        var smlRest = 5;
+            
+        var bigRest = 20;
+            
+        var sprint = 5;
+            
+        // Obstacles
+            
+        var hunger = 10;
+            
+        var brainDrain = hunger * 1.5;
+            
+        var moveSpace = 5;
+            
+        var sprintSpace = 10;
+            
+        var idle = 10;
+            
+        var randomChanceFood;
+            
+            
+        function scoreCalc() {
+            
+            score = score + stomach + brainPower + distanceTravelled + food;
+            document.getElementById('score').innerHTML = score;
+            
+        };
+        
+        function searchForFood() {
+            randomChanceFood = Math.floor((Math.random() * 10) + 1);
+            
+            if(randomChanceFood%2 == 0) {
+                food = food + 1;
+                console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
+                document.getElementById('stomach').innerHTML = stomach;
+                document.getElementById('brainPower').innerHTML = brainPower;
+                document.getElementById('food').innerHTML = food;
+            }
+            else {
+                stomach = stomach - idle;
+                brainPower = brainPower - brainDrain;
+                food = food;
+                console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
+                document.getElementById('stomach').innerHTML = stomach;
+                document.getElementById('brainPower').innerHTML = brainPower;
+                document.getElementById('food').innerHTML = food;
+            }
+            
+        };
+            
+        
+            
+            $('button').click(function() {
+                
+                if (hunger > 0 && brainPower > 0) {
+                
+                    if($(this).hasClass('move_btn')) {
+                        stomach = stomach - hunger + moveSpace;
+                        brainPower = brainPower - brainDrain;
+                        distanceTravelled = distanceTravelled + 1;
+                        console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
+                        console.log('You have travelled ' + distanceTravelled + ' km.');
+                        document.getElementById('stomach').innerHTML = stomach;
+                        document.getElementById('brainPower').innerHTML = brainPower;
+                        document.getElementById('distanceTravelled').innerHTML = distanceTravelled + ' km';
+                        console.log("Success");
+                        scoreCalc();
+                    }
+                    else if($(this).hasClass('eat_btn')) {
+
+                        if (food > 0) {
+                            stomach = stomach + eatFood;
+                            brainPower = brainPower + smlRest;
+                            food = food - 1;
+                            console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
+                            document.getElementById('stomach').innerHTML = stomach;
+                            document.getElementById('brainPower').innerHTML = brainPower;
+                            document.getElementById('food').innerHTML = food;
+                            console.log("Success");
+                            scoreCalc();
+                        }
+                        else if (food <=0) {
+                            stomach = stomach - idle;
+                            brainPower = brainPower + smlRest;
+                            console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
+                            document.getElementById('stomach').innerHTML = stomach;
+                            document.getElementById('brainPower').innerHTML = brainPower;
+                            scoreCalc();
+                        }
+                    }
+                    else if($(this).hasClass('search_btn')) {
+                        searchForFood();
+                        scoreCalc();
+                    }
+                    else if($(this).hasClass('rest_btn')) {
+                        stomach = stomach - hunger;
+                        brainPower = brainPower + bigRest;
+                        console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
+                        document.getElementById('stomach').innerHTML = stomach;
+                        document.getElementById('brainPower').innerHTML = brainPower;
+                        scoreCalc();
+                    }
+                    else if($(this).hasClass('sprint_btn')) {
+                        stomach = stomach - hunger - sprintSpace;
+                        brainPower = brainPower - brainDrain;
+                        distanceTravelled = distanceTravelled + sprint;
+                        console.log('You stomach is now ' + stomach + ' and your brain power is ' + brainPower);
+                        document.getElementById('stomach').innerHTML = stomach;
+                        document.getElementById('brainPower').innerHTML = brainPower;
+                        document.getElementById('distanceTravelled').innerHTML = distanceTravelled + ' km';
+                        scoreCalc();
+                    }
+                    else {
+                        console.log(":(");   
+                    }
+                }
+                
+                else if (hunger <= 0 || brainPower <= 0) {
+                    console.log(':(');
+                }
+                
+            });
+            
+        </script>
+            
+    </body>
+    
+</html>
