@@ -1,3 +1,7 @@
+<script>
+    console.log('Test');
+</script>
+
 <h1>AddToWishlist - Todo List</h1>
 
 <hr>
