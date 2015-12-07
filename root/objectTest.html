@@ -177,7 +177,7 @@
                     }
                 
                         .product_item.hidden {
-                            display: block;   
+                            display: none;   
                         }
         
             </style>
@@ -279,7 +279,7 @@
                         if($( "#demo" ).hasClass( "demoClass" ))  {
                             
                             document.write(
-                                "<div class=\"product_item\" id=\"" +
+                                "<div class=\"product_item addToWishlist\" id=\"" +
                                 "prod" +
                                 [i] +
                                 "\">" +
@@ -361,15 +361,18 @@
                 
                 <div id="demo2">
                     
-                    <div class="product_item wishlist hidden" id="prod0"></div>
-                    <div class="product_item hidden" id="prod1"></div>
-                    <div class="product_item hidden" id="prod2"></div>
-                    <div class="product_item hidden" id="prod3"></div>
-                    <div class="product_item hidden" id="prod4"></div>
+                    <div class="product_item hidden" id="wish0"></div>
+                    <div class="product_item hidden" id="wish1"></div>
+                    <div class="product_item hidden" id="wish2"></div>
+                    <div class="product_item hidden" id="wish3"></div>
+                    <div class="product_item hidden" id="wish4"></div>
                 
                 <script>
                     
+                    var counter = 0;
+                    
                     function wishlist() {
+                        
                         /*
                         document.getElementById('demo2').innerHTML = (
                             "<div class=\"product_item\">" +
@@ -384,36 +387,63 @@
                             );
                         */
                         console.log('innerHTML');
-                        document.getElementById(prodItem).innerHTML = (
+                        console.log(counter);
+                        counter = counter + 1;
+                        document.getElementById('wish' + prodItem).innerHTML = (
                             "<span class=\"product_name\">" + 
                             prdArray[prodNum].prdName + 
                             "</span>" +
                             "<br />" +
                             "<span class=\"product_price\">" +
-                            prdArray[prodNum].prdPrice + 
-                            console.log('HEY') +
+                            prdArray[prodNum].prdCode +
                             "</span>" + 
                             "<br />"
                             );
+                        $('#wish' + prodItem).addClass('itemCount' + counter);
+                        $('#wish' + prodItem).css('display', 'block');
+                            console.log('Test');
+                            console.log(prodItem);
+                            console.log(counter);
                     };
                     
                     var prodItem;
                     
                     var prodNum;
                     
-                    $('.product_item').click(function() {
-                        if($(this).hasClass('wishtlist') && $(this).attr('id') == 'prod0') {
-                            prodItem = 'prod0';
-                            prodNum = 0;
-                            wishlist();
-                        }
-                        else if($(this).attr('id') == 'prod1') {
-                            prodItem = 1;
-                            prodNum = 1;
-                            wishlist();
+                    $('.addToWishlist').click(function() {
+                        if($(this).hasClass('addToWishlist')) {
+                            $(this).removeClass('addToWishlist')
+                            if($(this).attr('id') == 'prod0') {
+                                prodItem = 0;
+                                prodNum = 0;
+                                wishlist();
+                            }
+                            else if($(this).attr('id') == 'prod1') {
+                                prodItem = 1;
+                                prodNum = 1;
+                                wishlist();
+                            }
+                            else if($(this).attr('id') == 'prod2') {
+                                prodItem = 2;
+                                prodNum = 2;
+                                wishlist();
+                            }
+                            else if($(this).attr('id') == 'prod3') {
+                                prodItem = 3;
+                                prodNum = 3;
+                                wishlist();
+                            }
+                            else if($(this).attr('id') == 'prod4') {
+                                prodItem = 4;
+                                prodNum = 4;
+                                wishlist();
+                            }
+                            else {
+                                console.log('The code refused to change, what?');                     
+                            }
                         }
                         else {
-                            console.log('The code refused to change, what?');                     
+                            console.log('error');                      
                         }
 
                     });
