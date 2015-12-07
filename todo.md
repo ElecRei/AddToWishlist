@@ -14,7 +14,7 @@ alert(s);
     </tr>
     <tr>
         <td>Clean up JavaScript and move the larger functions to an external file.</td>
-        <td>centered<img src="root/imgs/checkmark.png" /></td>
+        <td>centered Done</td>
     </tr>
 </table>
 
