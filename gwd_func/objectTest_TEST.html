@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Add To Wishlist - DEMO</title>
+        <meta name="description" content="__">
+        
+        <!-- CSS -->
+            
+            <!-- Normalize -->
+            <link rel="stylesheet" type="text/css" href="node_modules/normalize.css/normalize.css" />
+            
+            <!-- Page Styling -->
+            <link rel="stylesheet" type="text/css" href="css/styling.css" />
+            
+            
+            <style>
+                
+                /* Raleway */
+                @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+                /* font-family: 'Raleway', sans-serif; */
+                
+                @keyframes alertBox {
+                 
+                    0% { top: -50px; }
+                    
+                    50% { top: 0px; }
+                    
+                    100% { top: -50px; }
+                    
+                }
+                
+                @keyframes pushDown {
+                 
+                    0% { margin-top: 0px; }
+                    
+                    50% { top: 50px; }
+                    
+                    100% { top: 0px; }
+                    
+                }
+                
+                * {
+                    z-index: 0;   
+                }
+                
+                body {
+                    font-family: 'Raleway', sans-serif;   
+                }
+                
+                .alert {
+                    background: #2ecc71;
+                    cursor: default;
+                    opacity: 0;
+                    
+                    width: 100vw;
+                    height: 50px;
+                    position: fixed;
+                        top: -50px;
+                        left: 0;
+                        right: 0;
+                    
+                    /*animation: alertBox 5s;*/
+                    z-index: 100;
+                }
+                
+                    .alert_text {
+                        color: #FFF;
+                        font-size: 1.2em;
+                        font-weight: 700;
+                        line-height: 50px;
+                        text-align: center;
+                        -webkit-user-select: none; /* Chrome/Safari */        
+                        -moz-user-select: none; /* Firefox */
+                        -ms-user-select: none; /* IE10+ */
+                        
+                        display: block;
+                        width: 100%;
+                        
+                    }
+                
+                nav {
+                    background: #3498db;
+                    
+                    width: 100%;
+                    height: 42px;
+                    margin-bottom: 24px;
+                }
+                
+                    nav .nav_item {
+                        color: #FFF;
+                        font-size: 1.2em;
+                        font-weight: 700;
+                        line-height: 42px;
+                        text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+                        
+                        display: block;
+                        width: auto;
+                        height: 42px;
+                        float: left;
+                        
+                        transition: all .2s;
+                    }
+                
+                        nav .nav_item.currentTab {
+                            background: #2980b9;
+                        }
+                
+                        nav .nav_item:first-child { margin-left: 22px; }
+                        nav .nav_item { padding: 0px 12px; }
+                
+                        nav .nav_item:hover {
+                            background: #2980b9;   
+                        }
+                
+                #product_catalogue {
+                    width: 100%;
+                        max-width: 1080px;
+                        min-width: 320px;
+                }
+                
+                    .unselectedTab {
+                        display: none;   
+                    }
+                
+                    .selectedTab { display: block; }
+                
+                    #demo {
+                        width: auto;
+                        height: auto;
+                        overflow: hidden;
+
+                        animation: pushDown 5s;   
+                    }
+
+                    .product_item {
+                        border: 1px solid #bdc3c7;
+                        cursor: pointer;
+
+                        width: 20%;
+                        height: 300px;
+                        margin: 0px 2% 48px 2%;
+                        position: relative;
+                        float: left;
+
+                        transition: all .2s;
+                    }
+
+                        .product_item:hover {
+                            background: #ecf0f1;   
+                        }
+
+                        .product_name {
+                            font-weight: 700;
+                            text-align: center;
+
+                            width: 100%;
+                            position: absolute;
+                                top: 12px;
+                        }
+
+                        .product_image {
+
+                        }
+
+                        .product_price {
+                            text-align: center;
+
+                            width: 100%;
+                            position: absolute;
+                                bottom: 12px;
+                        }
+                
+                    #product_wishlist {
+                        background: skyblue;   
+                    }
+                
+                        .product_item.hidden {
+                            display: none;   
+                        }
+        
+            </style>
+        
+        
+        <!-- JS + jQuery -->
+        
+            <!-- jQuery v.1.11.3 -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    </head>
+    
+    
+    <body>
+        
+        <!--
+
+            Post-lunch figure out why pushDown animation is not working and make the product boxes look good.
+
+        -->
+        
+        <div class="alert">
+            <span class="alert_text">Product Added to Wishlist!</span>
+        </div>
+        
+        <nav>
+            <a href="#" title="Catalogue" class="nav_item currentTab" data-id="1">
+                <span class="text">Catalogue</span>
+            </a>
+            <a href="#" title="Wishlist" class="nav_item" data-id="2">
+                <span class="text">Wishlist</span>
+            </a>
+        </nav>
+       
+        <div id="product_catalogue">
+            
+            <!--
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            -->
+            
+            <div id="demo" class="demoClass selectedTab section"  data-id="1">
+                
+                <script src="js/lib/productOutput.js"></script>
+                
+                <script src="js/addToWishlist_func.js"></script>
+        
+                <!--<script src="js/lib/productList.js"></script>-->
+                
+                <script>
+                    
+                    $('.nav_item').click(function() {
+                        
+                        
+                        // Post Lunch Note
+                        // Figure out how to detect if an element has a data-id/attribute, or maybe just look up
+                        // a tutorial on jQuery tabs. 
+                        
+                        if(!$(this).hasClass('currentTab')) {
+                            if($(this).attr('1')) {
+                                $('.section').removeClass('selectedTab');
+                                $('#demo').addClass('selectedTab');   
+                            }
+                            else if($(this).attr('2')) {
+                                $('.section').removeClass('selectedTab');
+                                $('#product_wishlist').addClass('selectedTab');   
+                            }
+                            
+                            $('.nav_item').removeClass('currentTab');
+                            $(this).addClass('currentTab');
+                            console.log('It worked');   
+                        }
+                        else {
+                            console.log('Nope');   
+                        }
+                    });
+                    
+                    console.log("TEST");
+                </script>
+            
+                <script>
+                    
+                    /* Basic Update Animation - Use default animation for now */
+                    
+                    $('.product_item').click(function() {
+                        $('.alert').animate({
+                            top: "0px",
+                            opacity: "1"
+                        }, 1000, function() {
+                            $('.alert').animate({
+                                top: "-50px",
+                                opacity: "0"
+                            }, 900);
+                        });
+                    });
+
+                </script>
+            
+            </div>
+            
+            <div id="product_wishlist" data-id="2">
+
+                <h2>Wishlist</h2>
+                
+                <div id="demo2">
+                    
+                    <div class="product_item hidden" id="wish0"></div>
+                    <div class="product_item hidden" id="wish1"></div>
+                    <div class="product_item hidden" id="wish2"></div>
+                    <div class="product_item hidden" id="wish3"></div>
+                    <div class="product_item hidden" id="wish4"></div>
+                
+                
+                    
+                </div>
+
+            </div>
+            
+        </div>
+        
+        
+        <script>
+        
+            console.log(numberOfProducts);
+            console.log("Testing");
+        
+        </script>
+        
+        <script>
+            /*
+            document.getElementById("demo").innerHTML =
+            prd01.prdName + " " + prd01.prdCode;
+            */
+        </script>
+        
+        
+        
+    </body>
+    
+</html>
