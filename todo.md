@@ -4,7 +4,7 @@
 
 | Task                                                                  | Completed?       |
 | --------------------------------------------------------------------- | :--------------: |
-| Clean up JavaScript and move the larger functions to an external file.|                  |
+| Clean up JavaScript and move the larger functions to an external file.| Yep!             |
 | Make folder for GWD functionality testing.                            | Yep!             |
 | Merge Javascript into HTML file for said GWD testing.                 |                  |
 
