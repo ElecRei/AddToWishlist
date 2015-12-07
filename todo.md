@@ -7,16 +7,8 @@ alert(s);
 
 <hr>
 
-<table>
-    <tr>
-        <th>Task</th>
-        <th>Completed?</th>
-    </tr>
-    <tr>
-        <td>Clean up JavaScript and move the larger functions to an external file.</td>
-        <td>centered Done</td>
-    </tr>
-</table>
-
-
-
+| Task                                                                  | Completed?       |
+| --------------------------------------------------------------------- | :--------------: |
+| Clean up JavaScript and move the larger functions to an external file.|                  |
+| Make folder for GWD functionality testing.                            | Yep!             |
+| Merge Javascript into HTML file for said GWD testing.                 |                  |
