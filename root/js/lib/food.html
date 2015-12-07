@@ -1,0 +1,60 @@
+<html>
+    
+    
+    <body>
+        
+        <button onclick="hungerSim()"></button>
+        
+        <script>
+
+        var stomach = 100;
+
+        var brainThoughts = 100;
+
+        var food = 10;
+
+        var hunger = 10;
+            
+        var moveForward = stomach - 90;
+            
+        var distanceTravelled;
+            
+        var totalCalcHunger;
+            
+        var totalCalcThought;
+
+        function hungerSim() {
+            
+            
+            if (stomach > 0) {
+                totalCalcHunger = stomach - hunger - moveForward;
+                totalCalcThought = brainThoughts - hunger * 1.5;
+                
+                console.log(totalCalcHunger + ' and ' + totalCalcThought);
+                
+                stomach = totalCalcHunger;
+                brainThoughts = totalCalcThought;
+                
+                if(brainThoughts <= 0) {
+                    
+                    brainThoughts = 0;
+                    console.log('You\'re brain dead!');
+                    console.log('Final Score: Stomach - ' + stomach + '  Brain Power - ' + brainThoughts);
+                   
+                }
+                
+                console.log('Stomach is now ' + stomach + ' and brain power is ' + brainThoughts);
+                
+                distanceTravelled = distanceTravelled + 1;
+                
+                console.log('You have travelled ' + distanceTravelled + 'km from start.');
+            }
+
+
+        }
+        
+        </script>
+            
+    </body>
+    
+</html>
