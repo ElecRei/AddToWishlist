@@ -1,6 +1,7 @@
-<script>
-    alert("HEY");
-</script>
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+```
 
 <h1>AddToWishlist - Todo List</h1>
 
