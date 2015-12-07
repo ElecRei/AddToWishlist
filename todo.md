@@ -10,7 +10,6 @@
 
 
 <hr>
-<br>
 
 <h3>Notes</h3>
 <p>Nothing to note <em>*puh-dum-tsshh*</em></p>
