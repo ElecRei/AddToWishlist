@@ -1,5 +1,5 @@
 <script>
-    console.log('Test');
+    alert("HEY");
 </script>
 
 <h1>AddToWishlist - Todo List</h1>
