@@ -14,10 +14,9 @@ alert(s);
     </tr>
     <tr>
         <td>Clean up JavaScript and move the larger functions to an external file.</td>
-        <td></td>
+        <td><img src="root/imgs/checkmark.png" /></td>
     </tr>
 </table>
 
 
 
-<img src="root/imgs/checkmark.png" />
