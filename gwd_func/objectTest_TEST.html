@@ -193,12 +193,6 @@
     
     <body>
         
-        <!--
-
-            Post-lunch figure out why pushDown animation is not working and make the product boxes look good.
-
-        -->
-        
         <div class="alert">
             <span class="alert_text">Product Added to Wishlist!</span>
         </div>
@@ -225,61 +219,8 @@
             -->
             
             <div id="demo" class="demoClass selectedTab section"  data-id="1">
-                
-                <script src="js/lib/productOutput.js"></script>
-                
-                <script src="js/addToWishlist_func.js"></script>
         
-                <!--<script src="js/lib/productList.js"></script>-->
-                
-                <script>
-                    
-                    $('.nav_item').click(function() {
-                        
-                        
-                        // Post Lunch Note
-                        // Figure out how to detect if an element has a data-id/attribute, or maybe just look up
-                        // a tutorial on jQuery tabs. 
-                        
-                        if(!$(this).hasClass('currentTab')) {
-                            if($(this).attr('1')) {
-                                $('.section').removeClass('selectedTab');
-                                $('#demo').addClass('selectedTab');   
-                            }
-                            else if($(this).attr('2')) {
-                                $('.section').removeClass('selectedTab');
-                                $('#product_wishlist').addClass('selectedTab');   
-                            }
-                            
-                            $('.nav_item').removeClass('currentTab');
-                            $(this).addClass('currentTab');
-                            console.log('It worked');   
-                        }
-                        else {
-                            console.log('Nope');   
-                        }
-                    });
-                    
-                    console.log("TEST");
-                </script>
-            
-                <script>
-                    
-                    /* Basic Update Animation - Use default animation for now */
-                    
-                    $('.product_item').click(function() {
-                        $('.alert').animate({
-                            top: "0px",
-                            opacity: "1"
-                        }, 1000, function() {
-                            $('.alert').animate({
-                                top: "-50px",
-                                opacity: "0"
-                            }, 900);
-                        });
-                    });
-
-                </script>
+                <script src="js/addToWishlist_func.js"></script>
             
             </div>
             
@@ -302,23 +243,6 @@
             </div>
             
         </div>
-        
-        
-        <script>
-        
-            console.log(numberOfProducts);
-            console.log("Testing");
-        
-        </script>
-        
-        <script>
-            /*
-            document.getElementById("demo").innerHTML =
-            prd01.prdName + " " + prd01.prdCode;
-            */
-        </script>
-        
-        
         
     </body>
     

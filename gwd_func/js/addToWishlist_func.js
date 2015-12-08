@@ -328,4 +328,55 @@
 
         ////////////////////////////////////////////////////////////////////////////////
         
+
+
+
+        ////////////////////////////////////////////////////////////////////////////////
+
+        // Misc Functions
+        //
+        //
+
+        $('.nav_item').click(function() {
+
+
+            // Post Lunch Note
+            // Figure out how to detect if an element has a data-id/attribute, or maybe just look up
+            // a tutorial on jQuery tabs. 
+
+            if(!$(this).hasClass('currentTab')) {
+                if($(this).attr('1')) {
+                    $('.section').removeClass('selectedTab');
+                    $('#demo').addClass('selectedTab');   
+                }
+                else if($(this).attr('2')) {
+                    $('.section').removeClass('selectedTab');
+                    $('#product_wishlist').addClass('selectedTab');   
+                }
+
+                $('.nav_item').removeClass('currentTab');
+                $(this).addClass('currentTab');
+                console.log('It worked');   
+            }
+            else {
+                console.log('Nope');   
+            }
+        });
+
+        console.log("TEST");
+
+
+        /* Basic Update Animation - Use default animation for now */
+
+        $('.product_item').click(function() {
+            $('.alert').animate({
+                top: "0px",
+                opacity: "1"
+            }, 1000, function() {
+                $('.alert').animate({
+                    top: "-50px",
+                    opacity: "0"
+                }, 900);
+            });
+        });
         

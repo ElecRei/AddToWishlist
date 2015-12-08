@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Add To Wishlist - DEMO</title>
+        <meta name="description" content="__">
+        
+        <style>
+        
+            #block_holder {
+                background: #999;
+                
+                width: 100%;
+                height: 100%;
+            }
+            
+            .block {
+                width: 100px;
+                height: 100px;
+                float: left;
+            }
+            
+                #blk0 {
+                    background: #00CC00;   
+                }
+            
+                #blk1 {
+                    background: orange; 
+                }
+        
+        </style>
+        
+        <!-- jQuery v.1.11.3 -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        
+    </head>
+    
+    
+    <body>
+        
+        <button id="btn">Click</button>
+        
+        <div id="block_holder">
+            
+            <div class="block" id="blk0"></div>
+            
+        </div>
+        
+        <script>
+            
+            var blockHolder = document.getElementById('block_holder');
+            
+            var counter = 0;
+            
+            var btn = document.getElementById('btn');
+            
+            function newBlock() {
+                
+                counter = counter + 1;
+                
+                blockHolder = blockHolder.innerHTML = (
+                    
+                    "<div class=\"block\" id=\"blk" +
+                    counter +
+                    "\">" +
+                    "</div>"
+                );
+                
+                
+                    
+                console.log('Run');
+                
+            };
+            
+            $('#btn').click(newBlock());
+        
+        </script>
+        
+    </body>
+    
+</html>
