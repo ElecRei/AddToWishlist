@@ -269,7 +269,6 @@ function wishlist(){console.log("innerHTML");console.log(counter);counter+=1;doc
 $(".addToWishlist").click(function(){$(this).hasClass("addToWishlist")?($(this).removeClass("addToWishlist"),"prod0"==$(this).attr("id")?(prodNum=prodItem=0,wishlist()):"prod1"==$(this).attr("id")?(prodNum=prodItem=1,wishlist()):"prod2"==$(this).attr("id")?(prodNum=prodItem=2,wishlist()):"prod3"==$(this).attr("id")?(prodNum=prodItem=3,wishlist()):"prod4"==$(this).attr("id")?(prodNum=prodItem=4,wishlist()):console.log("The code refused to change, what?")):console.log("error")});
 $(".nav_item").click(function(){$(this).hasClass("currentTab")?console.log("Nope"):($(this).attr("1")?($(".section").removeClass("selectedTab"),$("#demo").addClass("selectedTab")):$(this).attr("2")&&($(".section").removeClass("selectedTab"),$("#product_wishlist").addClass("selectedTab")),$(".nav_item").removeClass("currentTab"),$(this).addClass("currentTab"),console.log("It worked"))});console.log("TEST");
 $(".product_item").click(function(){$(".alert").animate({top:"0px",opacity:"1"},1E3,function(){$(".alert").animate({top:"-50px",opacity:"0"},900)})});
-
         
         </script>
         
