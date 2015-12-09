@@ -6,9 +6,18 @@
 | --------------------------------------------------------------------- | :--------------: |
 | Clean up JavaScript and move the larger functions to an external file.| Yep!             |
 | Make folder for GWD functionality testing.                            | Yep!             |
-| Merge Javascript into HTML file for said GWD testing.                 |                  |
-| Test code in GWD creative                                             |                  |
+| Merge Javascript into HTML file for said GWD testing.                 | Yep!             |
+| Test code in GWD creative                                             | Yep!             |
 | Find out how how to dynamically create the product items              |                  |
+|                                                                       |                  |
+|                                                                       |                  |
+|                                                                       |                  |
+|                                                                       |                  |
+|                                                                       |                  |
+|                                                                       |                  |
+|                                                                       |                  |
+|                                                                       |                  |
+|                                                                       |                  |
 
 
 <hr>

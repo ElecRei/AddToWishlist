@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Google Web Designer 1.5.2.1202">
+  <meta name="template" content="Expandable 2.3.2">
+  <meta name="environment" content="gwd-doubleclick">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css" id="gwd-lightbox-style">.gwd-lightbox {
+    overflow: hidden;
+    border: 1px dashed rgb(160, 160, 160);
+}</style>
+  <style type="text/css" id="gwd-text-style">p {
+    margin: 0px;
+}
+h1 {
+    margin: 0px;
+}
+h2 {
+    margin: 0px;
+}
+h3 {
+    margin: 0px;
+}</style>
+  <style type="text/css">html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+.gwd-page-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.gwd-page-content {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    -moz-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    perspective: 1400px;
+    -webkit-perspective: 1400px;
+    -moz-perspective: 1400px;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    position: absolute;
+    background-color: transparent;
+}
+.gwd-page-wrapper {
+    position: absolute;
+    transform: translateZ(0px);
+    -webkit-transform: translateZ(0px);
+    -moz-transform: translateZ(0px);
+    background-color: rgb(255, 255, 255);
+}
+.banner {
+    width: 970px;
+    height: 250px;
+}
+.expanded {
+    width: 970px;
+    height: 500px;
+}
+.expand-button {
+    position: absolute;
+    width: 970px;
+    height: 250px;
+    left: 0px;
+    top: 0px;
+}
+.close-button {
+    position: absolute;
+    height: 48px;
+    top: 4px;
+    width: 48px;
+    left: 918px;
+    background-image: none;
+    background-color: rgba(153, 153, 153, 0.2);
+}
+.gwd-div-lz71 {
+    position: absolute;
+    width: 896px;
+    height: 250px;
+    left: 4px;
+    top: 4px;
+    background-image: none;
+    background-color: rgb(222, 222, 222);
+}
+.gwd-div-13xy {
+    position: absolute;
+    width: 896px;
+    height: 239px;
+    left: 4px;
+    top: 254px;
+    background-image: none;
+    background-color: rgb(45, 45, 45);
+}
+@keyframes alertBox {
+    0% {
+        top: -50px;
+    }
+    50% {
+        top: 0px;
+    }
+    100% {
+        top: -50px;
+    }
+}
+@-webkit-keyframes alertBox {
+    0% {
+        top: -50px;
+    }
+    50% {
+        top: 0px;
+    }
+    100% {
+        top: -50px;
+    }
+}
+@-moz-keyframes alertBox {
+    0% {
+        top: -50px;
+    }
+    50% {
+        top: 0px;
+    }
+    100% {
+        top: -50px;
+    }
+}
+@keyframes pushDown {
+    0% {
+        margin-top: 0px;
+    }
+    50% {
+        top: 50px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+@-webkit-keyframes pushDown {
+    0% {
+        margin-top: 0px;
+    }
+    50% {
+        top: 50px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+@-moz-keyframes pushDown {
+    0% {
+        margin-top: 0px;
+    }
+    50% {
+        top: 50px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+}
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+}
+p {
+    font-size: 1em;
+}
+* {
+    z-index: 0;
+}
+body {
+    font-family: Raleway, sans-serif;
+}
+.alert {
+    cursor: default;
+    opacity: 0;
+    width: 100vw;
+    height: 50px;
+    position: fixed;
+    top: -50px;
+    left: 0px;
+    right: 0px;
+    z-index: 100;
+    background: rgb(46, 204, 113);
+}
+.alert_text {
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 50px;
+    text-align: center;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    display: block;
+    width: 100%;
+}
+nav {
+    width: 100%;
+    height: 42px;
+    margin-bottom: 24px;
+    background: rgb(52, 152, 219);
+}
+nav .nav_item {
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 42px;
+    text-shadow: rgba(0, 0, 0, 0.498039) 1px 1px 2px;
+    display: block;
+    width: auto;
+    height: 42px;
+    float: left;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+}
+nav .nav_item.currentTab {
+    background: rgb(41, 128, 185);
+}
+nav .nav_item:first-child {
+    margin-left: 22px;
+}
+nav .nav_item {
+    padding: 0px 12px;
+}
+nav .nav_item:hover {
+    background: rgb(41, 128, 185);
+}
+#product_catalogue {
+    width: 100%;
+    max-width: 1080px;
+    min-width: 320px;
+}
+.unselectedTab {
+    display: none;
+}
+.selectedTab {
+    display: block;
+}
+#demo {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    animation: pushDown 5s;
+    -webkit-animation: pushDown 5s;
+    -moz-animation: pushDown 5s;
+}
+.product_item {
+    border: 1px solid rgb(189, 195, 199);
+    cursor: pointer;
+    width: 20%;
+    height: 300px;
+    margin: 0px 2% 48px;
+    position: relative;
+    float: left;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+}
+.product_item:hover {
+    background: rgb(236, 240, 241);
+}
+.product_name {
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 12px;
+}
+.product_image {} .product_price {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 12px;
+}
+#product_wishlist {
+    background: rgb(135, 206, 235);
+}
+.product_item.hidden {
+    display: none;
+}</style>
+  <link href="gwdpage_style.css" data-version="8" data-exports-type="gwd-page" rel="stylesheet">
+  <link href="gwddoubleclick_style.css" data-version="10" data-exports-type="gwd-doubleclick" rel="stylesheet">
+  <link href="gwdtaparea_style.css" data-version="4" data-exports-type="gwd-taparea" rel="stylesheet">
+  <link href="gwdpagedeck_style.css" data-version="8" data-exports-type="gwd-pagedeck" rel="stylesheet">
+  <script data-source="googbase_min.js" data-version="3" data-exports-type="googbase" type="text/javascript" src="googbase_min.js"></script>
+  <script data-source="gwd_webcomponents_min.js" data-version="4" data-exports-type="gwd_webcomponents" type="text/javascript" src="gwd_webcomponents_min.js"></script>
+  <script data-source="gwdpage_min.js" data-version="8" data-exports-type="gwd-page" type="text/javascript" src="gwdpage_min.js"></script>
+  <script data-source="gwdpagedeck_min.js" data-version="8" data-exports-type="gwd-pagedeck" type="text/javascript" src="gwdpagedeck_min.js"></script>
+  <script data-source="gwdtaparea_min.js" data-version="4" data-exports-type="gwd-taparea" type="text/javascript" src="gwdtaparea_min.js"></script>
+  <script data-source="https://s0.2mdn.net/ads/studio/Enabler.js" data-exports-type="gwd-doubleclick" type="text/javascript" src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+  <script data-source="gwddoubleclick_min.js" data-version="10" data-exports-type="gwd-doubleclick" type="text/javascript" src="gwddoubleclick_min.js"></script>
+  <script type="text/javascript" gwd-events="support" src="gwd-events-support.1.0.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+
+<body class="document-body">
+  <gwd-doubleclick id="gwd-ad" polite-load="">
+    <gwd-metric-configuration>
+      <gwd-metric-event source="expand-button" event="tapareaexit" metric=""></gwd-metric-event>
+      <gwd-metric-event source="close-button" event="tapareaexit" metric=""></gwd-metric-event>
+    </gwd-metric-configuration>
+    <div is="gwd-pagedeck" class="gwd-page-container" id="pagedeck" default-page="banner-page">
+      <div is="gwd-page" id="banner-page" data-gwd-name="Banner page" class="gwd-page-wrapper banner gwd-lightbox" data-gwd-width="970px" data-gwd-height="250px">
+        <div class="gwd-page-content banner">
+          <gwd-taparea id="expand-button" class="expand-button"></gwd-taparea>
+        </div>
+      </div>
+      <div is="gwd-page" id="expanded-page" expanded="" data-gwd-name="Expanded page" class="gwd-page-wrapper expanded gwd-lightbox" data-gwd-width="970px" data-gwd-height="500px" style="">
+        <div class="gwd-page-content expanded">
+          <gwd-taparea id="close-button" class="close-button"></gwd-taparea>
+          <div class="gwd-div-lz71" id="demo"><script>
+            
+            var currency=["CAD"],productType=["Ring","Necklace","Bracelet","Charm"],prd01={prdName:"Tropical Palm "+productType[0],prdImage:"IMAGE GOES HERE",prdPrice:"90 "+currency,prdCode:"190952CZ"},prd02={prdName:"Swirling Snake",prdImage:"IMAGE GOES HERE",prdPrice:"90 "+currency,prdCode:"190954CZ"},prd03={prdName:"Intricate Lattice",prdImage:"IMAGE GOES HERE",prdPrice:"75 "+currency,prdCode:"190955CZ"},prd04={prdName:"Tropical Palm "+productType[1],prdImage:"IMAGE GOES HERE",prdPrice:"140 "+currency,prdCode:"390370CZ"},
+prd05={prdName:"Green Leather "+productType[2],prdImage:"IMAGE GOES HERE",prdPrice:"55 "+currency,prdCode:"590705CLG-D"},prd06={prdName:"Blue Leather "+productType[2],prdImage:"IMAGE GOES HERE",prdPrice:"55 "+currency,prdCode:"590705CSB-D"},prd07={prdName:"Tropicana Gold "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"275 "+currency,prdCode:"750834"},prd08={prdName:"Tropicana Silver "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"40 "+currency,prdCode:"791543"},prd09={prdName:"Oceanic Mosaic "+
+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"75 "+currency,prdCode:"791261MCZMX"},prd10={prdName:"Sky Mosaic "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"75 "+currency,prdCode:"791261NSBMX"},prd11={prdName:"Symbol Of Stability "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"40 "+currency,prdCode:"791533CZ"},prd12={prdName:"Sea Turtle "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"65 "+currency,prdCode:"791538CZ"},prd13={prdName:"Sparkling Snake "+productType[3],prdImage:"IMAGE GOES HERE",
+prdPrice:"75 "+currency,prdCode:"791539CZ"},prd14={prdName:"Sparkling Palm Tree "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"50 "+currency,prdCode:"791540CZ"},prd15={prdName:"Playful Dolphin "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"50 "+currency,prdCode:"791541CZ"},prd16={prdName:"Orchid "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"50 "+currency,prdCode:"791554EN69"},prd17={prdName:"Petit Facets Blue "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"45 "+currency,
+prdCode:"791499SBQ"},prd18={prdName:"Petit Facets Green "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"45 "+currency,prdCode:"791499SGQ"},prdArray=[prd01,prd02,prd03,prd04,prd05,prd06,prd07,prd08,prd09,prd10,prd11,prd12,prd13,prd14,prd15,prd16,prd17,prd18],productContainer=document.getElementById("demo");
+for(i=0;17>=i;i++)$("#demo").hasClass("demoClass")?(document.write('<div class="product_item addToWishlist" id="prod'+[i]+'"><span class="product_name">'+prdArray[i].prdName+"</span><br />"),document.write('<span class="product_price">'+prdArray[i].prdPrice+"</span><br /></div>")):(document.write('<div class="product_item">'+prdArray[i].prdName+"<br />"),document.write(prdArray[i].prdPrice+"<br />"),document.write(prdArray[i].prdCode+"<br /></div>"));var counter=0;
+function wishlist(){console.log("innerHTML");console.log(counter);counter+=1;document.getElementById("wish"+prodItem).innerHTML='<span class="product_name">'+prdArray[prodNum].prdName+'</span><br /><span class="product_price">'+prdArray[prodNum].prdCode+"</span><br />";$("#wish"+prodItem).addClass("itemCount"+counter);$("#wish"+prodItem).css("display","block");console.log("Test");console.log(prodItem);console.log(counter)}var prodItem,prodNum;
+$(".addToWishlist").click(function(){$(this).hasClass("addToWishlist")?($(this).removeClass("addToWishlist"),"prod0"==$(this).attr("id")?(prodNum=prodItem=0,wishlist()):"prod1"==$(this).attr("id")?(prodNum=prodItem=1,wishlist()):"prod2"==$(this).attr("id")?(prodNum=prodItem=2,wishlist()):"prod3"==$(this).attr("id")?(prodNum=prodItem=3,wishlist()):"prod4"==$(this).attr("id")?(prodNum=prodItem=4,wishlist()):console.log("The code refused to change, what?")):console.log("error")});
+$(".nav_item").click(function(){$(this).hasClass("currentTab")?console.log("Nope"):($(this).attr("1")?($(".section").removeClass("selectedTab"),$("#demo").addClass("selectedTab")):$(this).attr("2")&&($(".section").removeClass("selectedTab"),$("#product_wishlist").addClass("selectedTab")),$(".nav_item").removeClass("currentTab"),$(this).addClass("currentTab"),console.log("It worked"))});console.log("TEST");
+$(".product_item").click(function(){$(".alert").animate({top:"0px",opacity:"1"},1E3,function(){$(".alert").animate({top:"-50px",opacity:"0"},900)})});
+        
+                </script></div>
+          <div class="gwd-div-13xy" id="demo2"></div>
+        </div>
+      </div>
+    </div>
+  </gwd-doubleclick>
+  <script type="text/javascript" gwd-events="registration">
+    // Support code for event handling in Google Web Designer
+     // This script block is auto-generated. Please do not edit!
+    gwd.actions.events.registerEventHandlers = function(event) {
+      gwd.actions.events.addHandler('expand-button', 'action', gwd.handleExpand_buttonAction, false);
+      gwd.actions.events.addHandler('close-button', 'action', gwd.handleClose_buttonAction, false);
+      gwd.actions.events.addHandler('close-button', 'action', gwd.handleClose_reportManualClose, false);
+    };
+    gwd.actions.events.deregisterEventHandlers = function(event) {
+      gwd.actions.events.removeHandler('expand-button', 'action', gwd.handleExpand_buttonAction, false);
+      gwd.actions.events.removeHandler('close-button', 'action', gwd.handleClose_buttonAction, false);
+      gwd.actions.events.removeHandler('close-button', 'action', gwd.handleClose_reportManualClose, false);
+    };
+    document.addEventListener("DOMContentLoaded", gwd.actions.events.registerEventHandlers);
+    document.addEventListener("unload", gwd.actions.events.deregisterEventHandlers);
+  </script>
+  <script type="text/javascript" gwd-events="handlers">
+    gwd.handleExpand_buttonAction = function() {
+      // GWD Predefined Function
+      gwd.actions.gwdDoubleclick.goToPage('gwd-ad', 'expanded-page');
+    };
+    gwd.handleClose_buttonAction = function() {
+      // GWD Predefined Function
+      gwd.actions.gwdDoubleclick.goToPage('gwd-ad', 'banner-page');
+    };
+    gwd.handleClose_reportManualClose = function() {
+      // GWD Predefined Function
+      gwd.actions.gwdDoubleclick.reportManualClose('gwd-ad');
+    };
+  </script>
+  <script type="text/javascript" id="gwd-init-code">
+    (function() {
+      var gwdAd = document.getElementById('gwd-ad');
+
+      /**
+       * Handles the DOMContentLoaded event. The DOMContentLoaded event is
+       * fired when the document has been completely loaded and parsed.
+       */
+      function handleDomContentLoaded(event) {
+
+      }
+
+      /**
+       * Handles the WebComponentsReady event. This event is fired when all
+       * custom elements have been registered and upgraded.
+       */
+      function handleWebComponentsReady(event) {
+        // Start the Ad lifecycle.
+        setTimeout(function() {
+          gwdAd.initAd();
+        }, 0);
+      }
+
+      /**
+       * Handles the event that is dispatched after the Ad has been
+       * initialized and before the default page of the Ad is shown.
+       */
+      function handleAdInitialized(event) {}
+
+      window.addEventListener('DOMContentLoaded',
+        handleDomContentLoaded, false);
+      window.addEventListener('WebComponentsReady',
+        handleWebComponentsReady, false);
+      window.addEventListener('adinitialized',
+        handleAdInitialized, false);
+    })();
+  </script>
+
+
+<script data-exports-type="dclk-quick-preview">studio.Enabler.setRushSimulatedLocalEvents(true);</script><script data-exports-type="gwd-studio-registration">function StudioExports() {
+Enabler.setExpandingPixelOffsets(0,0,970,500,false,false);
+Enabler.counter("expand-button: tapareaexit");
+Enabler.counter("close-button: tapareaexit");
+}</script><script type="text/gwd-admetadata">{"version":1,"type":"DoubleClick","format":"","template":"","politeload":true,"fullscreen":false,"counters":[{"source":"expand-button","metric":"expand-button: tapareaexit"},{"source":"close-button","metric":"close-button: tapareaexit"}],"timers":[],"exits":[],"creativeProperties":{"minWidth":970,"minHeight":250,"maxWidth":970,"maxHeight":500},"components":["gwd-taparea","gwd-doubleclick","gwd-page","gwd-pagedeck"]}</script></body></html>
