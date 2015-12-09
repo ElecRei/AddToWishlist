@@ -9,14 +9,8 @@
 | Merge Javascript into HTML file for said GWD testing.                 | Yep!             |
 | Test code in GWD creative                                             | Yep!             |
 | Find out how how to dynamically create the product items              |                  |
-|                                                                       |                  |
-|                                                                       |                  |
-|                                                                       |                  |
-|                                                                       |                  |
-|                                                                       |                  |
-|                                                                       |                  |
-|                                                                       |                  |
-|                                                                       |                  |
+| Look into implementing FB Share button to wishlist                    |                  |
+| Figure out tabbed interface for wishlist, esp for GWD ad              |                  |
 |                                                                       |                  |
 
 
