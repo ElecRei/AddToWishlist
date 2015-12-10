@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Add To Wishlist - DEMO</title>
+        <meta name="description" content="__">
+        
+        <!-- CSS -->
+            
+            <!-- Normalize -->
+            <link rel="stylesheet" type="text/css" href="node_modules/normalize.css/normalize.css" />
+            
+            <style>
+                
+                /* Raleway */
+                @import url(https://fonts.googleapis.com/css?family=Raleway:400,700);
+                /* font-family: 'Raleway', sans-serif; */
+                
+                @keyframes alertBox {
+                 
+                    0% { top: -50px; }
+                    
+                    50% { top: 0px; }
+                    
+                    100% { top: -50px; }
+                    
+                }
+                
+                @keyframes pushDown {
+                 
+                    0% { margin-top: 0px; }
+                    
+                    50% { top: 50px; }
+                    
+                    100% { top: 0px; }
+                    
+                }
+                
+                body { 
+                    font-family: /*"Lucida Sans Unicode", "Lucida Grande", sans-serif*/ 'Open Sans', sans-serif;
+                    font-size: 100%;
+                    line-height: 1.5;
+                }
+
+                a {
+                    color: #000;
+                    text-decoration: none;
+                }
+
+                h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+
+                p {
+                    font-size: 1em;
+                }
+                
+                * {
+                    z-index: 0;   
+                }
+                
+                body {
+                    font-family: 'Raleway', sans-serif;   
+                }
+                
+                .alert {
+                    background: #2ecc71;
+                    cursor: default;
+                    opacity: 0;
+                    
+                    width: 100vw;
+                    height: 50px;
+                    position: fixed;
+                        top: -50px;
+                        left: 0;
+                        right: 0;
+                    
+                    /*animation: alertBox 5s;*/
+                    z-index: 100;
+                }
+                
+                    .alert_text {
+                        color: #FFF;
+                        font-size: 1.2em;
+                        font-weight: 700;
+                        line-height: 50px;
+                        text-align: center;
+                        -webkit-user-select: none; /* Chrome/Safari */        
+                        -moz-user-select: none; /* Firefox */
+                        -ms-user-select: none; /* IE10+ */
+                        
+                        display: block;
+                        width: 100%;
+                        
+                    }
+                
+                nav {
+                    background: #3498db;
+                    
+                    width: 100%;
+                    height: 42px;
+                    margin-bottom: 24px;
+                }
+                
+                    nav .nav_item {
+                        color: #FFF;
+                        font-size: 1.2em;
+                        font-weight: 700;
+                        line-height: 42px;
+                        text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+                        
+                        display: block;
+                        width: auto;
+                        height: 42px;
+                        float: left;
+                        
+                        transition: all .2s;
+                    }
+                
+                        nav .nav_item.currentTab {
+                            background: #2980b9;
+                        }
+                
+                        nav .nav_item:first-child { margin-left: 22px; }
+                        nav .nav_item { padding: 0px 12px; }
+                
+                        nav .nav_item:hover {
+                            background: #2980b9;   
+                        }
+                
+                #product_catalogue {
+                    width: 100%;
+                        max-width: 1080px;
+                        min-width: 320px;
+                }
+                
+                    .unselectedTab {
+                        display: none;   
+                    }
+                
+                    .selectedTab { display: block; }
+                
+                    #demo {
+                        width: auto;
+                        height: auto;
+                        overflow: hidden;
+
+                        animation: pushDown 5s;   
+                    }
+
+                    .product_item {
+                        border: 1px solid #bdc3c7;
+                        cursor: pointer;
+
+                        width: 20%;
+                        height: 300px;
+                        margin: 0px 2% 48px 2%;
+                        position: relative;
+                        float: left;
+
+                        transition: all .2s;
+                    }
+
+                        .product_item:hover {
+                            background: #ecf0f1;   
+                        }
+
+                        .product_name {
+                            font-weight: 700;
+                            text-align: center;
+
+                            width: 100%;
+                            position: absolute;
+                                top: 12px;
+                        }
+
+                        .product_image {
+
+                        }
+
+                        .product_price {
+                            text-align: center;
+
+                            width: 100%;
+                            position: absolute;
+                                bottom: 12px;
+                        }
+                
+                    #product_wishlist {
+                        background: skyblue;   
+                    }
+                
+                        .product_item.hidden {
+                            display: none;   
+                        }
+        
+            </style>
+        
+        
+        <!-- JS + jQuery -->
+        
+            <!-- jQuery v.1.11.3 -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    </head>
+    
+    
+    <body>
+        
+        <div class="alert">
+            <span class="alert_text">Product Added to Wishlist!</span>
+        </div>
+        
+        <nav>
+            <a href="#" title="Catalogue" class="nav_item currentTab" data-id="1">
+                <span class="text">Catalogue</span>
+            </a>
+            <a href="#" title="Wishlist" class="nav_item" data-id="2">
+                <span class="text">Wishlist</span>
+            </a>
+        </nav>
+       
+        <div id="product_catalogue">
+            
+            <!--
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            <div class="product_item"></div>
+            -->
+            
+            <div id="demo" class="demoClass selectedTab section"  data-id="1">
+        
+                <script>
+            
+            var currency=["CAD"],productType=["Ring","Necklace","Bracelet","Charm"],prd01={prdName:"Tropical Palm "+productType[0],prdImage:"IMAGE GOES HERE",prdPrice:"90 "+currency,prdCode:"190952CZ"},prd02={prdName:"Swirling Snake",prdImage:"IMAGE GOES HERE",prdPrice:"90 "+currency,prdCode:"190954CZ"},prd03={prdName:"Intricate Lattice",prdImage:"IMAGE GOES HERE",prdPrice:"75 "+currency,prdCode:"190955CZ"},prd04={prdName:"Tropical Palm "+productType[1],prdImage:"IMAGE GOES HERE",prdPrice:"140 "+currency,prdCode:"390370CZ"},
+prd05={prdName:"Green Leather "+productType[2],prdImage:"IMAGE GOES HERE",prdPrice:"55 "+currency,prdCode:"590705CLG-D"},prd06={prdName:"Blue Leather "+productType[2],prdImage:"IMAGE GOES HERE",prdPrice:"55 "+currency,prdCode:"590705CSB-D"},prd07={prdName:"Tropicana Gold "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"275 "+currency,prdCode:"750834"},prd08={prdName:"Tropicana Silver "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"40 "+currency,prdCode:"791543"},prd09={prdName:"Oceanic Mosaic "+
+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"75 "+currency,prdCode:"791261MCZMX"},prd10={prdName:"Sky Mosaic "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"75 "+currency,prdCode:"791261NSBMX"},prd11={prdName:"Symbol Of Stability "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"40 "+currency,prdCode:"791533CZ"},prd12={prdName:"Sea Turtle "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"65 "+currency,prdCode:"791538CZ"},prd13={prdName:"Sparkling Snake "+productType[3],prdImage:"IMAGE GOES HERE",
+prdPrice:"75 "+currency,prdCode:"791539CZ"},prd14={prdName:"Sparkling Palm Tree "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"50 "+currency,prdCode:"791540CZ"},prd15={prdName:"Playful Dolphin "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"50 "+currency,prdCode:"791541CZ"},prd16={prdName:"Orchid "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"50 "+currency,prdCode:"791554EN69"},prd17={prdName:"Petit Facets Blue "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"45 "+currency,
+prdCode:"791499SBQ"},prd18={prdName:"Petit Facets Green "+productType[3],prdImage:"IMAGE GOES HERE",prdPrice:"45 "+currency,prdCode:"791499SGQ"},prdArray=[prd01,prd02,prd03,prd04,prd05,prd06,prd07,prd08,prd09,prd10,prd11,prd12,prd13,prd14,prd15,prd16,prd17,prd18],productContainer=document.getElementById("demo");
+for(i=0;17>=i;i++)$("#demo").hasClass("demoClass")?(document.write('<div class="product_item addToWishlist" id="prod'+[i]+'"><span class="product_name">'+prdArray[i].prdName+"</span><br />"),document.write('<span class="product_price">'+prdArray[i].prdPrice+"</span><br /></div>")):(document.write('<div class="product_item">'+prdArray[i].prdName+"<br />"),document.write(prdArray[i].prdPrice+"<br />"),document.write(prdArray[i].prdCode+"<br /></div>"));var counter=0;
+function wishlist(){console.log("innerHTML");console.log(counter);counter+=1;document.getElementById("wish"+prodItem).innerHTML='<span class="product_name">'+prdArray[prodNum].prdName+'</span><br /><span class="product_price">'+prdArray[prodNum].prdCode+"</span><br />";$("#wish"+prodItem).addClass("itemCount"+counter);$("#wish"+prodItem).css("display","block");console.log("Test");console.log(prodItem);console.log(counter)}var prodItem,prodNum;
+$(".addToWishlist").click(function(){$(this).hasClass("addToWishlist")?($(this).removeClass("addToWishlist"),"prod0"==$(this).attr("id")?(prodNum=prodItem=0,wishlist()):"prod1"==$(this).attr("id")?(prodNum=prodItem=1,wishlist()):"prod2"==$(this).attr("id")?(prodNum=prodItem=2,wishlist()):"prod3"==$(this).attr("id")?(prodNum=prodItem=3,wishlist()):"prod4"==$(this).attr("id")?(prodNum=prodItem=4,wishlist()):console.log("The code refused to change, what?")):console.log("error")});
+$(".nav_item").click(function(){$(this).hasClass("currentTab")?console.log("Nope"):($(this).attr("1")?($(".section").removeClass("selectedTab"),$("#demo").addClass("selectedTab")):$(this).attr("2")&&($(".section").removeClass("selectedTab"),$("#product_wishlist").addClass("selectedTab")),$(".nav_item").removeClass("currentTab"),$(this).addClass("currentTab"),console.log("It worked"))});console.log("TEST");
+$(".product_item").click(function(){$(".alert").animate({top:"0px",opacity:"1"},1E3,function(){$(".alert").animate({top:"-50px",opacity:"0"},900)})});
+        
+                </script>
+            
+            </div>
+            
+            <div id="product_wishlist" data-id="2">
+
+                <h2>Wishlist</h2>
+                
+                <div id="demo2">
+                    
+                    <div class="product_item hidden" id="wish0"></div>
+                    <div class="product_item hidden" id="wish1"></div>
+                    <div class="product_item hidden" id="wish2"></div>
+                    <div class="product_item hidden" id="wish3"></div>
+                    <div class="product_item hidden" id="wish4"></div>
+                
+                
+                    
+                </div>
+
+            </div>
+            
+        </div>
+        
+        
+        
+    </body>
+    
+</html>
